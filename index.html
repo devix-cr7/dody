@@ -91,8 +91,8 @@
   }
   .btn:hover{ transform: translateY(-3px) scale(1.03); box-shadow: 0 14px 28px rgba(224,80,122,0.45); }
   .btn:active{ transform: translateY(0) scale(0.98); }
-  .btn.hidden{ opacity:0; pointer-events:none; transform: translateY(12px); }
-  .btn.reveal{ opacity:1; pointer-events:auto; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .btn.hidden{ opacity:0; pointer-events:none; }
+  .btn.reveal{ opacity:1; pointer-events:auto; transition: opacity 0.7s ease; }
 
   .moon{
     font-size: clamp(3.2rem, 10vw, 5rem);
@@ -198,12 +198,16 @@
 
   .page[data-page="4"]{
     overflow-y:auto;
-    display:block;
-    padding-top:14vh;
-    padding-bottom:12vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding-top:10vh;
+    padding-bottom:14vh;
+    gap: 2.2rem;
   }
-  .page[data-page="4"] .letter{ margin:0 auto; }
-  .page[data-page="4"] #p4btn{ display:block; margin:1.6rem auto 0; }
+  .page[data-page="4"] .letter{ margin:0 auto; flex-shrink:0; }
+  .page[data-page="4"] #p4btn{ display:block; margin:0 auto; flex-shrink:0; }
 
   @media (max-width:520px){
     .kitty{ width:46px; height:46px; }
@@ -271,7 +275,7 @@
 
   <section class="page" data-page="4">
     <div class="letter" id="letterBox"></div>
-    <button class="btn hidden" id="p4btn" data-next="5" style="margin-top:1.6rem;">أدري بيج ماتحبيني؟ 🤨</button>
+    <button class="btn hidden" id="p4btn" data-next="5">أدري بيج ماتحبيني؟ 🤨</button>
   </section>
 
   <section class="page" data-page="5">
